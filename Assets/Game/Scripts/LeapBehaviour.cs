@@ -3,12 +3,15 @@ using System.Collections;
 using Leap;
 
 public class LeapBehaviour : MonoBehaviour {
-	Controller controller;
-	
+	public GameObject cube;
+	public HandController handController;
+
+	private Controller controller;
+
 	void Start ()
 	{
 		controller = new Controller();
-		controller.EnableGesture (Gesture.GestureType.TYPECIRCLE);
+		//controller.EnableGesture (Gesture.GestureType.TYPECIRCLE);
 	}
 	
 	void Update ()
@@ -23,10 +26,29 @@ public class LeapBehaviour : MonoBehaviour {
 				if (hand.IsLeft){
 					//Debug.Log ("left");
 				} else if (hand.IsRight){
-					Debug.Log ("right");
-					foreach (Gesture g in frame.Gestures ()) {
+					//Debug.Log ("right");
+					/*foreach (Gesture g in frame.Gestures ()) {
 						if (g.Type == Gesture.GestureType.TYPECIRCLE){
 							Debug.Log ("performed circle gesture");
+						}
+					}*/
+
+					HandModel handModel = null;
+					foreach (HandModel model in this.handController.GetAllGraphicsHands()){
+						if (model.GetLeapHand().IsRight)
+							handModel = model;
+					}
+
+					if (handModel != null) {
+						Debug.Log ("Grip strength: " + hand.GrabStrength.ToString());
+						Debug.Log ("Palm: " + handModel.GetPalmPosition() + " - Cube: " + cube.transform.position.ToString());
+						if (hand.GrabStrength > 0.75f) {
+							if (this.cube != null) {
+								this.cube.transform.position = Vector3.Lerp (
+									this.cube.transform.position,
+									handModel.GetPalmPosition(),
+									Time.deltaTime * 5);
+							}
 						}
 					}
 				}
