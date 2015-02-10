@@ -45,9 +45,16 @@ public class DataController : MonoBehaviour
 							Random.value * collider.bounds.size.x,
 							Random.value * collider.bounds.size.y,
 							Random.value * collider.bounds.size.z) - collider.bounds.extents;
+
 			newDatum.SetController (this);
+
+			if (i > 0)
+				newDatum.SetConnectionTarget (data [i - 1].transform);
+
 			data.Add(newDatum);
 		}
+
+		data [0].SetConnectionTarget (data [data.Count - 1].transform);
 			
 		if (this.panel != null)
 			this.panel.flocking.ButtonTurnsOn ();

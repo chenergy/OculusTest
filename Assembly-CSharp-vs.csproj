@@ -52,6 +52,10 @@
      <Compile Include="Assets\Game\Scripts\DataController.cs" />
      <Compile Include="Assets\Game\Scripts\DataFlocking.cs" />
      <Compile Include="Assets\Game\Scripts\Datum.cs" />
+     <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\EnterWormhole.cs" />
+     <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\Galaxy.cs" />
+     <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\GalaxyStarter.cs" />
+     <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\ParticleSpiralEffect.cs" />
      <Compile Include="Assets\Game\Scripts\ForceShieldAnimation.cs" />
      <Compile Include="Assets\Game\Scripts\GameManager.cs" />
      <Compile Include="Assets\Game\Scripts\LeapBehaviour.cs" />

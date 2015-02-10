@@ -8,6 +8,8 @@ public class Datum : MonoBehaviour
 	DataFlocking flocking = null;
 	DataArranged arranged = null;
 
+	Transform connectionTarget = null;
+
 	LineRenderer lineRenderer;
 
 	// Use this for initialization
@@ -27,11 +29,18 @@ public class Datum : MonoBehaviour
 	{
 		this.lineRenderer.SetPosition (0, this.transform.position);
 		this.lineRenderer.SetPosition (1, this.controller.target.transform.position);
+
+		/*if (this.connectionTarget != null)
+			this.lineRenderer.SetPosition (1, this.connectionTarget.transform.position);*/
 	}
 
 	public void SetController (DataController controller) {
 		this.controller = controller;
 		this.flocking.controller = controller;
+	}
+
+	public void SetConnectionTarget (Transform target){
+		this.connectionTarget = target;
 	}
 
 	public void EnableFlocking (){

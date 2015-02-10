@@ -1,19 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp-firstpass-vs.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/BallReaction.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/DensityWaveGalaxy/Galaxy.cs">
     <Files>
-      <File FileName="Assets/Game/Scripts/SliderData.cs" Line="58" Column="58" />
-      <File FileName="Assets/Game/Scripts/PanelController.cs" Line="55" Column="55" />
-      <File FileName="Assets/Game/Scripts/DataController.cs" Line="4" Column="4" />
-      <File FileName="Assets/Game/Scripts/ButtonData.cs" Line="27" Column="27" />
-      <File FileName="Assets/Game/Scripts/Datum.cs" Line="59" Column="59" />
-      <File FileName="Assets/Game/Shaders/ForceField3.shader" Line="61" Column="61" />
-      <File FileName="Assets/Game/Scripts/Rotate.cs" Line="68" Column="68" />
-      <File FileName="Assets/Game/Scripts/ForceShieldAnimation.cs" Line="2" Column="2" />
-      <File FileName="Assets/Game/Scripts/OffsetAnimation.cs" Line="3" Column="3" />
-      <File FileName="Assets/Game/Shaders/Grid.shader" Line="19" Column="19" />
-      <File FileName="Assets/Game/Shaders/Wireframe.shader" Line="15" Column="15" />
-      <File FileName="Assets/Game/Scripts/BallReaction.cs" Line="4" Column="4" />
+      <File FileName="Assets/Game/Scripts/SliderData.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/PanelController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/DataController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Datum.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/ButtonData.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Shaders/ForceField3.shader" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Rotate.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/ForceShieldAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/OffsetAnimation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/BallReaction.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/DensityWaveGalaxy/Galaxy.cs" Line="43" Column="43" />
+      <File FileName="Assets/Game/Scripts/DensityWaveGalaxy/GalaxyStarter.cs" Line="37" Column="37" />
+      <File FileName="Assets/Game/Scripts/DensityWaveGalaxy/EnterWormhole.cs" Line="32" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
