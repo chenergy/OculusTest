@@ -25,15 +25,6 @@ public class Galaxy : MonoBehaviour
 		public int radius;
 	}
 
-	// For trig lookup tables
-	private const float PI2 = Mathf.PI * 2.0f; 
-	private const int TABLE_SIZE = 1024 * 128;
-	private const float TABLE_SIZE_D = (float)TABLE_SIZE;
-	private const float FACTOR = TABLE_SIZE_D / PI2;
-
-	private static float[] _CosineFloatTable;
-	private static float[] _SineFloatTable;
-
 	// Galaxy variables
 	public int Rmax = 4000; //-- radius of galaxy
 	public float Rker = 500f; //-- radius of kernel
@@ -53,15 +44,13 @@ public class Galaxy : MonoBehaviour
 
 
 	void Start () {
-		InitializeTrigonometricTables ();
-
 		for (int r = 0; r < Rmax; r++) {
 			float b = etwist * r / Rmax;
 			Ellipse newEllipse = new Ellipse ();
 			//newEllipse.sin = r * Mathf.Sin (b);
 			//newEllipse.cos = r * Mathf.Cos (b);
-			newEllipse.sin = r * this.Sin (b);
-			newEllipse.cos = r * this.Cos (b);
+			newEllipse.sin = r * TrigLookup.Sin (b);
+			newEllipse.cos = r * TrigLookup.Cos (b);
 			newEllipse.velocity = speed / (r + 1);
 			newEllipse.eratio = eratio;
 			this.ellipses.Add (newEllipse);
@@ -83,16 +72,7 @@ public class Galaxy : MonoBehaviour
 	}
 
 
-	private static void InitializeTrigonometricTables(){
-		_CosineFloatTable = new float[TABLE_SIZE];
-		_SineFloatTable = new float[TABLE_SIZE];
 
-		for (int i = 0; i < TABLE_SIZE; i++){
-			float Angle = (1.0f * i / TABLE_SIZE_D) * PI2;
-			_SineFloatTable[i] = Mathf.Sin(Angle);
-			_CosineFloatTable[i] = Mathf.Cos(Angle);
-		}
-	}
 
 
 	void InitStarCluster (int num) {
@@ -104,7 +84,7 @@ public class Galaxy : MonoBehaviour
 
 		for (int i = 0; i < num; i++) {
 			StarData data = new StarData ();
-			float angle = PI2 * Random.value;
+			float angle = TrigLookup.PI2 * Random.value;
 			int radius = Random.Range (0, Rmax);
 			data.angle = angle;
 			data.radius = radius;
@@ -127,22 +107,6 @@ public class Galaxy : MonoBehaviour
 	}
 
 
-	private float Sin (float value){
-		value %= PI2;  // In case that the angle is larger than 2pi
-		if (value < 0) value += PI2; // in case that the angle is negative
-		int index = (int)(value * FACTOR); //from radians to index and casted in to an int
-		return _SineFloatTable[index]; // get the value from the table
-	}
-
-
-	private float Cos (float value){
-		value %= PI2;  // In case that the angle is larger than 2pi
-		if (value < 0) value += PI2; // in case that the angle is negative
-		int index = (int)(value * FACTOR); //from radians to index and casted in to an int
-		return _CosineFloatTable[index]; // get the value from the table
-	}
-
-
 	void Update (){
 		foreach (StarCluster cluster in this.starClusters) {
 			for (int i = 0; i < cluster.starData.Count; i++){
@@ -153,8 +117,8 @@ public class Galaxy : MonoBehaviour
 
 				//vec.x = Mathf.Sin (star.angle);
 				//vec.y = ellipse.eratio * Mathf.Cos (star.angle);
-				vec.x = this.Sin (star.angle);
-				vec.y = ellipse.eratio * this.Cos (star.angle);
+				vec.x = TrigLookup.Sin (star.angle);
+				vec.y = ellipse.eratio * TrigLookup.Cos (star.angle);
 
 				cluster.vectorPoints [i] = new Vector3 (
 					ellipse.sin * vec.x + ellipse.cos * vec.y, 

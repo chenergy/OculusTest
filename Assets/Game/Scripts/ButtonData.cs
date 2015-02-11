@@ -16,14 +16,19 @@ public class ButtonData : ButtonDemoToggle
 	public override void ButtonTurnsOff (){
 	}
 
+
 	public void TurnOn ()
 	{
 		this.TurnsOnGraphics ();
+		this.SetMinDistance(onDistance);
+		this.toggle_state_ = true;
 	}
 
 	public void TurnOff()
 	{
 		this.TurnsOffGraphics();
+		this.SetMinDistance(offDistance);
+		this.toggle_state_ = false;
 	}
 }
 

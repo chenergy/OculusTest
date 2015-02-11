@@ -58,7 +58,12 @@
      <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\ParticleSpiralEffect.cs" />
      <Compile Include="Assets\Game\Scripts\ForceShieldAnimation.cs" />
      <Compile Include="Assets\Game\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Game\Scripts\GlobeControls\Globe.cs" />
+     <Compile Include="Assets\Game\Scripts\GlobeControls\GlobeAlert.cs" />
+     <Compile Include="Assets\Game\Scripts\GlobeControls\GlobeControl.cs" />
+     <Compile Include="Assets\Game\Scripts\Helpers\TrigLookup.cs" />
      <Compile Include="Assets\Game\Scripts\LeapBehaviour.cs" />
+     <Compile Include="Assets\Game\Scripts\MeshDistortion.cs" />
      <Compile Include="Assets\Game\Scripts\OffsetAnimation.cs" />
      <Compile Include="Assets\Game\Scripts\PanelController.cs" />
      <Compile Include="Assets\Game\Scripts\PanelData.cs" />
