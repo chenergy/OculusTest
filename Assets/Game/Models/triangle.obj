@@ -1,0 +1,12 @@
+# OBJ written from /Users/fxmobile1/Desktop/triangle.obj
+# Units	meters
+
+o Mesh
+v 0 0 -1.7
+v -1 0 0
+v 1 0 0
+vn 0 1 0
+mtllib triangle.mtl
+usemtl Default
+g Default
+f 1//1 2//1 3//1

@@ -1,0 +1,9 @@
+----- Total AssetImport time: 0.027980s, AssetImport time: 0.000001s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]
+
+Platform assembly: /Applications/Unity4.6.1/Unity4.6.1.app/Contents/Frameworks/Mono/lib/mono/2.0/Boo.Lang.Compiler.dll (this message is harmless)
+Platform assembly: /Applications/Unity4.6.1/Unity4.6.1.app/Contents/Frameworks/Mono/lib/mono/2.0/Boo.Lang.dll (this message is harmless)
+Platform assembly: /Applications/Unity4.6.1/Unity4.6.1.app/Contents/Frameworks/Mono/lib/mono/2.0/Boo.Lang.Parser.dll (this message is harmless)
+Platform assembly: /Applications/Unity4.6.1/Unity4.6.1.app/Contents/Frameworks/Mono/lib/mono/2.0/UnityScript.Lang.dll (this message is harmless)
+Refresh: detecting if any assets need to be imported or removed ... Refresh: elapses 0.041210 seconds
+
+----- Total AssetImport time: 0.028520s, AssetImport time: 0.000000s, Asset hashing: 0.000000s [0 B, 0.000000 mb/s]

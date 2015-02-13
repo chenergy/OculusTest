@@ -8,11 +8,12 @@ public class PanelController : MonoBehaviour
 
 	public ButtonData flocking;
 	public ButtonData arranged;
-	public ButtonData other;
+	public ButtonData triangle;
 	public SliderData slider;
 
 	public float panelOpenTime = 0.25f;
 	public Image panelBG;
+	public ActionTree triangleTree;
 	public PanelData[] panels;
 
 	private Vector3 startTarget = Vector3.zero;
@@ -25,6 +26,9 @@ public class PanelController : MonoBehaviour
 		if (arranged != null)
 			arranged.OnButtonEnabled += this.OnArrangedEnabled;
 
+		if (triangle != null)
+			triangle.OnButtonEnabled += this.OnTriangleEnabled;
+
 		if (slider != null)
 			slider.OnChangeSlider += this.OnChangePosition;
 	}
@@ -35,6 +39,9 @@ public class PanelController : MonoBehaviour
 
 		if (arranged != null)
 			arranged.OnButtonEnabled -= this.OnArrangedEnabled;
+
+		if (triangle != null)
+			triangle.OnButtonEnabled -= this.OnTriangleEnabled;
 
 		if (slider != null)
 			slider.OnChangeSlider -= this.OnChangePosition;
@@ -57,12 +64,17 @@ public class PanelController : MonoBehaviour
 		case DataState.FLOCKING:
 			flocking.TurnOn ();
 			arranged.TurnOff ();
-			other.TurnOff ();
+			triangle.TurnOff ();
 			break;
 		case DataState.BAR_ARRANGED:
 			flocking.TurnOff ();
 			arranged.TurnOn ();
-			other.TurnOff ();
+			triangle.TurnOff ();
+			break;
+		case DataState.TRIANGLE:
+			flocking.TurnOff ();
+			arranged.TurnOff ();
+			triangle.TurnOn ();
 			break;
 		default:
 			break;
@@ -74,28 +86,40 @@ public class PanelController : MonoBehaviour
 			controller.EnableFlocking ();
 			this.ToggleButtons (DataState.FLOCKING);
 
-			foreach (PanelData panel in this.panels) {
-				panel.DisableData ();
-			}
-
-			this.panelBG.gameObject.SetActive (false);
+			this.OnArrangedDisabled ();
+			this.OnTriangleDisabled ();
 
 			Debug.Log ("flocking on");
 		}
 	}
 
+
+	void OnFlockingDisabled (){
+	}
+
+
 	void OnArrangedEnabled (){
 		if (controller.State != DataState.BAR_ARRANGED) {
 			controller.EnableArranged ();
 			this.ToggleButtons (DataState.BAR_ARRANGED);
-
 			this.panelBG.gameObject.SetActive (true);
 
 			StopCoroutine ("ArrangeRoutine");
 			StartCoroutine ("ArrangeRoutine");
 
+			this.OnFlockingDisabled ();
+			this.OnTriangleDisabled ();
+
 			Debug.Log ("arranged on");
 		}
+	}
+
+
+	void OnArrangedDisabled (){
+		foreach (PanelData panel in this.panels) {
+			panel.DisableData ();
+		}
+		this.panelBG.gameObject.SetActive (false);
 	}
 
 
@@ -127,6 +151,25 @@ public class PanelController : MonoBehaviour
 		foreach (PanelData panel in this.panels) {
 			panel.EnableData ();
 		}
+	}
+
+
+	void OnTriangleEnabled (){
+		if (controller.State != DataState.TRIANGLE) {
+			controller.EnableTriangle ();
+			this.ToggleButtons (DataState.TRIANGLE);
+			this.triangleTree.Activate ();
+
+			this.OnFlockingDisabled ();
+			this.OnArrangedDisabled ();
+
+			Debug.Log ("triangle on");
+		}
+	}
+
+
+	void OnTriangleDisabled (){
+		this.triangleTree.DeActivate ();
 	}
 
 

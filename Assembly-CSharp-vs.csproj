@@ -46,17 +46,20 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Game\Scripts\BallReaction.cs" />
-     <Compile Include="Assets\Game\Scripts\ButtonData.cs" />
-     <Compile Include="Assets\Game\Scripts\DataArranged.cs" />
-     <Compile Include="Assets\Game\Scripts\DataController.cs" />
-     <Compile Include="Assets\Game\Scripts\DataFlocking.cs" />
-     <Compile Include="Assets\Game\Scripts\Datum.cs" />
+     <Compile Include="Assets\Game\Scripts\ActionTree\ActionTree.cs" />
+     <Compile Include="Assets\Game\Scripts\ActionTree\ActionTreeNode.cs" />
+     <Compile Include="Assets\Game\Scripts\ConsoleProgram.cs" />
+     <Compile Include="Assets\Game\Scripts\DataControls\ButtonData.cs" />
+     <Compile Include="Assets\Game\Scripts\DataControls\DataArranged.cs" />
+     <Compile Include="Assets\Game\Scripts\DataControls\DataController.cs" />
+     <Compile Include="Assets\Game\Scripts\DataControls\DataFlocking.cs" />
+     <Compile Include="Assets\Game\Scripts\DataControls\Datum.cs" />
      <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\EnterWormhole.cs" />
      <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\Galaxy.cs" />
      <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\GalaxyStarter.cs" />
      <Compile Include="Assets\Game\Scripts\DensityWaveGalaxy\ParticleSpiralEffect.cs" />
      <Compile Include="Assets\Game\Scripts\ForceShieldAnimation.cs" />
+     <Compile Include="Assets\Game\Scripts\GameInit.cs" />
      <Compile Include="Assets\Game\Scripts\GameManager.cs" />
      <Compile Include="Assets\Game\Scripts\GlobeControls\Globe.cs" />
      <Compile Include="Assets\Game\Scripts\GlobeControls\GlobeAlert.cs" />
@@ -65,12 +68,12 @@
      <Compile Include="Assets\Game\Scripts\LeapBehaviour.cs" />
      <Compile Include="Assets\Game\Scripts\MeshDistortion.cs" />
      <Compile Include="Assets\Game\Scripts\OffsetAnimation.cs" />
-     <Compile Include="Assets\Game\Scripts\PanelController.cs" />
-     <Compile Include="Assets\Game\Scripts\PanelData.cs" />
+     <Compile Include="Assets\Game\Scripts\Panel\PanelController.cs" />
+     <Compile Include="Assets\Game\Scripts\Panel\PanelData.cs" />
+     <Compile Include="Assets\Game\Scripts\Panel\SelfCompleteImage.cs" />
+     <Compile Include="Assets\Game\Scripts\Panel\SelfCompleteText.cs" />
+     <Compile Include="Assets\Game\Scripts\Panel\SliderData.cs" />
      <Compile Include="Assets\Game\Scripts\Rotate.cs" />
-     <Compile Include="Assets\Game\Scripts\SelfCompleteImage.cs" />
-     <Compile Include="Assets\Game\Scripts\SelfCompleteText.cs" />
-     <Compile Include="Assets\Game\Scripts\SliderData.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\MovementManager.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\RandomBlocksGenerator.cs" />
@@ -201,6 +204,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
      <None Include="Assets\LeapMotion\InteractionUtils (alpha)\readme.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\Game\Resources\textLog3.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
      <None Include="Assets\LeapMotion\Resources\LeapIRUndistorted_foreground.shader" />
@@ -250,6 +254,7 @@
      <None Include="Assets\Game\Fonts\Oswald\OFL.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
      <None Include="Assets\Game\Shaders\ForceShield.shader" />
+     <None Include="Assets\Game\Resources\textLog2.txt" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
@@ -277,6 +282,7 @@
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Game\Shaders\Shield.shader" />
+     <None Include="Assets\Game\Resources\textLog.txt" />
      <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
      <None Include="Assets\Game\Shaders\FractalProto.shader" />

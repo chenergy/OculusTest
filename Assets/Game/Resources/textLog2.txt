@@ -1,0 +1,12 @@
+GPUProgram: loaded 1:991c1da8831e7ef8142b5fcfc82ad8da kwords 0000000000085022 from cache in 9.78 ms
+GPUProgram: loaded 2:dcc7778fb0fa94f21715308217726112 kwords 0000000000085022 from cache in 0.33 ms
+GPUProgram: loaded 1:71877423a7f74c28b01dfdf732a576b8 kwords 0000000000085022 from cache in 0.40 ms
+GPUProgram: loaded 2:47e6ec0afc05ecce47ebfb9dc6cd3e24 kwords 0000000000085022 from cache in 0.28 ms
+GPUProgram: loaded 1:91e9acd10451867f239319178eea5609 kwords 0000000000085022 from cache in 1.14 ms
+GPUProgram: loaded 2:28c0138fd023c56b1f784f289102f568 kwords 0000000000085022 from cache in 0.38 ms
+GPUProgram: loaded 1:520c35e140f18cdc182f8948d05cb807 kwords 0000000000085022 from cache in 0.58 ms
+GPUProgram: loaded 2:8427cf725e82f84bd82427dbae4ba3a5 kwords 0000000000085022 from cache in 0.32 ms
+GPUProgram: loaded 1:19dc86a4f2b6ead70aa3c1a2116a4564 kwords 0000000000085022 from cache in 0.22 ms
+GPUProgram: loaded 2:47f71b7508992f267e782d054c9bdf75 kwords 0000000000085022 from cache in 0.16 ms
+GPUProgram: loaded 1:9ecb2249b2c2a408c1f7c9630516c820 kwords 0000000000085022 from cache in 0.26 ms
+GPUProgram: loaded 2:f3397156cd1fec13e135f6150157bdce kwords 0000000000085022 from cache in 0.53 ms

@@ -6,7 +6,8 @@ using System.Collections.Generic;
 public enum DataState {
 	NONE,
 	FLOCKING,
-	BAR_ARRANGED
+	BAR_ARRANGED,
+	TRIANGLE
 }
 
 /// <summary>
@@ -79,7 +80,7 @@ public class DataController : MonoBehaviour
 
 		}
 	}*/
-	
+
 
 	public void EnableFlocking (){
 		if (this.state != DataState.FLOCKING) {
@@ -112,6 +113,12 @@ public class DataController : MonoBehaviour
 			}
 
 			this.state = DataState.BAR_ARRANGED;
+		}
+	}
+
+	public void EnableTriangle (){
+		if (this.state != DataState.TRIANGLE) {
+			this.state = DataState.TRIANGLE;
 		}
 	}
 }

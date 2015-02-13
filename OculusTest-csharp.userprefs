@@ -1,15 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp-firstpass-vs.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/MeshDistortion.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/GameInit.cs">
     <Files>
-      <File FileName="Assets/Game/Scripts/ButtonData.cs" Line="3" Column="3" />
-      <File FileName="Assets/LeapMotion/Widgets/Scripts/Button/ButtonToggleBase.cs" Line="9" Column="9" />
-      <File FileName="Assets/LeapMotion/Widgets/Scripts/ButtonDemoToggle.cs" Line="25" Column="25" />
-      <File FileName="Assets/Game/Scripts/MeshDistortion.cs" Line="3" Column="3" />
-      <File FileName="Assets/Game/Scripts/DensityWaveGalaxy/Galaxy.cs" Line="3" Column="3" />
-      <File FileName="Assets/Game/Scripts/Helpers/TrigLookup.cs" Line="41" Column="41" />
-      <File FileName="Assets/Game/Scripts/GlobeControls/GlobeControl.cs" Line="24" Column="24" />
-      <File FileName="Assets/Game/Scripts/GlobeControls/Globe.cs" Line="4" Column="4" />
+      <File FileName="Assets/Game/Scripts/GlobeControls/GlobeAlert.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/ActionTree/ActionTree.cs" Line="5" Column="5" />
+      <File FileName="Assets/Game/Scripts/ActionTree/ActionTreeNode.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/GameInit.cs" Line="2" Column="2" />
+      <File FileName="Assets/Game/Scripts/ConsoleProgram.cs" Line="34" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
