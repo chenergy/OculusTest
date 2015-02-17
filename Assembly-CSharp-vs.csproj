@@ -70,6 +70,8 @@
      <Compile Include="Assets\Game\Scripts\OffsetAnimation.cs" />
      <Compile Include="Assets\Game\Scripts\Panel\PanelController.cs" />
      <Compile Include="Assets\Game\Scripts\Panel\PanelData.cs" />
+     <Compile Include="Assets\Game\Scripts\Panel\PanelTouchAnimation.cs" />
+     <Compile Include="Assets\Game\Scripts\Panel\PanelTouchDetection.cs" />
      <Compile Include="Assets\Game\Scripts\Panel\SelfCompleteImage.cs" />
      <Compile Include="Assets\Game\Scripts\Panel\SelfCompleteText.cs" />
      <Compile Include="Assets\Game\Scripts\Panel\SliderData.cs" />

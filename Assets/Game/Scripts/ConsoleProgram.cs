@@ -52,6 +52,8 @@ public class ConsoleProgram : MonoBehaviour
 		if (this.action != null) {
 			this.action.Activate ();
 			this.transform.parent.gameObject.SetActive (false);
+			yield return new WaitForSeconds (1.0f);
+			GameObject.Destroy (this.action.gameObject);
 		}
 	}
 

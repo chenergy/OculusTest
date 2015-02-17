@@ -1,38 +1,74 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[System.Serializable]
+
+public enum AnimationDirection {
+	FORWARD,
+	BACKWARD
+}
+
+/*[System.Serializable]
 public class StartEndVector {
 	public Vector3 start;
 	public Vector3 end;
-}
+}*/
 
 public class ActionTreeNode : MonoBehaviour
 {
-	public float maxTime = 1.0f;
-	public float speed = 1.0f;
-	public StartEndVector localPositionVec;
-	public StartEndVector localRotationVec;
-	public StartEndVector localScaleVec;
-	public Transform targetTriangle;
+	//public float maxTime = 1.0f;
+	//public float speed = 1.0f;
+	//public StartEndVector localPositionVec;
+	//public StartEndVector localRotationVec;
+	//public StartEndVector localScaleVec;
+	//public Transform targetTriangle;
+	public Animation targetAnimation;
+	public string animationName = "";
+	public float childAnimationDelay = 0.0f;
 	public ActionTreeNode[] childNodes;
 
 	private bool childActivated = false;
-
+	private Coroutine coroutine = null;
 
 	// Use this for initialization
 	void Start ()
 	{
-		this.targetTriangle.localPosition = localPositionVec.start;
+		/*this.targetTriangle.localPosition = localPositionVec.start;
 		this.targetTriangle.localRotation = Quaternion.Euler (localRotationVec.start);
-		this.targetTriangle.localScale = localScaleVec.start;
+		this.targetTriangle.localScale = localScaleVec.start;*/
 	}
 	
-	public void ActionDirection (int direction){
-		StartCoroutine ("ActionRoutine", direction);
+	public void ActionDirection (AnimationDirection direction, float speed){
+		//float animSpeed = (direction == AnimationDirection.FORWARD) ? Mathf.Abs (speed) : -Mathf.Abs (speed);
+		if (this.coroutine != null)
+			StopCoroutine (this.coroutine);
+		this.coroutine = StartCoroutine (ActionRoutine (direction, speed));
 	}
 
-	IEnumerator ActionRoutine (int direction){
+	IEnumerator ActionRoutine (AnimationDirection direction, float speed){
+		if (this.targetAnimation != null) {
+			if (this.targetAnimation.GetClip (this.animationName) != null) {
+				if (direction == AnimationDirection.BACKWARD)
+					this.targetAnimation [this.animationName].normalizedTime = 1.0f;
+				float animSpeed = (direction == AnimationDirection.FORWARD) ? Mathf.Abs (speed) : -Mathf.Abs (speed);
+				this.targetAnimation [this.animationName].speed = animSpeed;
+				this.targetAnimation.Play (this.animationName);
+			}
+		}
+
+		yield return new WaitForSeconds (this.childAnimationDelay);
+
+		foreach (ActionTreeNode t in this.childNodes) {
+			if (t != null) {
+				//t.maxTime = this.maxTime;
+				//t.speed = this.speed;
+				t.ActionDirection (direction, speed);
+			}
+		}
+
+		this.coroutine = null;
+
+		Debug.Log ((this.coroutine == null));
+		/*
 		float timer = 0.0f;
 
 		while (timer < maxTime) {
@@ -64,6 +100,7 @@ public class ActionTreeNode : MonoBehaviour
 		}
 
 		this.childActivated = false;
+		*/
 	}
 }
 

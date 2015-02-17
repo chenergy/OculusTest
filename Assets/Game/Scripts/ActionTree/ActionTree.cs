@@ -4,11 +4,21 @@ using System.Collections;
 public class ActionTree : MonoBehaviour
 {
 	public ActionTreeNode parentNode;
-	public float maxTime = 1.0f;
+	//public float maxTime = 1.0f;
+	[Range (0.0f, 10.0f)]
 	public float speed = 1.0f;
+	private bool active = false;
+
 
 
 	// Update is called once per frame
+	void Update (){
+		if (Input.GetKeyDown (KeyCode.Q)) {
+			this.Activate ();
+		} else if (Input.GetKeyDown (KeyCode.W)) {
+			this.DeActivate ();
+		}
+	}
 	/*void Update (){
 		if (Input.GetKeyDown (KeyCode.Q)) {
 			this.parentNode.maxTime = this.maxTime;
@@ -23,17 +33,21 @@ public class ActionTree : MonoBehaviour
 	}*/
 
 	public void Activate (){
-		this.parentNode.maxTime = this.maxTime;
-		this.parentNode.speed = this.speed;
-		this.parentNode.ActionDirection (0);
-		StartCoroutine ("DisableSelf");
+		if (!this.active) {
+			//this.parentNode.maxTime = this.maxTime;
+			//this.parentNode.speed = this.speed;
+			this.parentNode.ActionDirection (AnimationDirection.FORWARD, speed);
+			this.active = true;
+		}
 	}
 
 	public void DeActivate() {
-		this.parentNode.maxTime = this.maxTime;
-		this.parentNode.speed = this.speed;
-		this.parentNode.ActionDirection (1);
-		StartCoroutine ("DisableSelf");
+		if (this.active) {
+			//this.parentNode.maxTime = this.maxTime;
+			//this.parentNode.speed = this.speed;
+			this.parentNode.ActionDirection (AnimationDirection.BACKWARD, speed);
+			this.active = false;
+		}
 	}
 
 	IEnumerator DisableSelf (){

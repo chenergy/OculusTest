@@ -10,6 +10,7 @@ public class PanelController : MonoBehaviour
 	public ButtonData arranged;
 	public ButtonData triangle;
 	public SliderData slider;
+	public GameObject fingerTracker;
 
 	public float panelOpenTime = 0.25f;
 	public Image panelBG;
@@ -56,6 +57,7 @@ public class PanelController : MonoBehaviour
 			//this.ToggleButtons (DataState.FLOCKING);
 			//flocking.TurnOn ();
 		//}
+		this.fingerTracker.SetActive (false);
 	}
 
 	public void ToggleButtons (DataState state){
@@ -103,6 +105,7 @@ public class PanelController : MonoBehaviour
 			controller.EnableArranged ();
 			this.ToggleButtons (DataState.BAR_ARRANGED);
 			this.panelBG.gameObject.SetActive (true);
+			this.fingerTracker.SetActive (true);
 
 			StopCoroutine ("ArrangeRoutine");
 			StartCoroutine ("ArrangeRoutine");
@@ -120,6 +123,7 @@ public class PanelController : MonoBehaviour
 			panel.DisableData ();
 		}
 		this.panelBG.gameObject.SetActive (false);
+		this.fingerTracker.SetActive (false);
 	}
 
 
