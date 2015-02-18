@@ -75,7 +75,9 @@
      <Compile Include="Assets\Game\Scripts\Panel\SelfCompleteImage.cs" />
      <Compile Include="Assets\Game\Scripts\Panel\SelfCompleteText.cs" />
      <Compile Include="Assets\Game\Scripts\Panel\SliderData.cs" />
-     <Compile Include="Assets\Game\Scripts\Rotate.cs" />
+     <Compile Include="Assets\Game\Scripts\Rotate_Constant.cs" />
+     <Compile Include="Assets\Game\Scripts\Rotate_Sequence.cs" />
+     <Compile Include="Assets\Game\Scripts\Universe\UniverseCube.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\BlocksPlaneGenerator.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\MovementManager.cs" />
      <Compile Include="Assets\LeapMotion+OVR\DemoResources\Scripts\RandomBlocksGenerator.cs" />

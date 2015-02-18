@@ -7,8 +7,8 @@ public class ActionTree : MonoBehaviour
 	//public float maxTime = 1.0f;
 	[Range (0.0f, 10.0f)]
 	public float speed = 1.0f;
-	private bool active = false;
 
+	private bool active = false;
 
 
 	// Update is called once per frame
@@ -19,23 +19,9 @@ public class ActionTree : MonoBehaviour
 			this.DeActivate ();
 		}
 	}
-	/*void Update (){
-		if (Input.GetKeyDown (KeyCode.Q)) {
-			this.parentNode.maxTime = this.maxTime;
-			this.parentNode.speed = this.speed;
-			this.parentNode.ActionDirection (0);
-		}
-		if (Input.GetKeyDown (KeyCode.W)) {
-			this.parentNode.maxTime = this.maxTime;
-			this.parentNode.speed = this.speed;
-			this.parentNode.ActionDirection (1);
-		}
-	}*/
 
 	public void Activate (){
 		if (!this.active) {
-			//this.parentNode.maxTime = this.maxTime;
-			//this.parentNode.speed = this.speed;
 			this.parentNode.ActionDirection (AnimationDirection.FORWARD, speed);
 			this.active = true;
 		}
@@ -43,8 +29,6 @@ public class ActionTree : MonoBehaviour
 
 	public void DeActivate() {
 		if (this.active) {
-			//this.parentNode.maxTime = this.maxTime;
-			//this.parentNode.speed = this.speed;
 			this.parentNode.ActionDirection (AnimationDirection.BACKWARD, speed);
 			this.active = false;
 		}

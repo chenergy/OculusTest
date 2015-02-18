@@ -1,9 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/ActionTree/ActionTreeNode.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game/Scripts/Universe/UniverseCube.cs">
     <Files>
-      <File FileName="Assets/Game/Scripts/ActionTree/ActionTree.cs" Line="23" Column="23" />
-      <File FileName="Assets/Game/Scripts/ActionTree/ActionTreeNode.cs" Line="52" Column="52" />
+      <File FileName="Assets/Game/Scripts/ActionTree/ActionTree.cs" Line="32" Column="32" />
+      <File FileName="Assets/Game/Scripts/ActionTree/ActionTreeNode.cs" Line="25" Column="25" />
+      <File FileName="Assets/Game/Scripts/Rotate_Sequence.cs" Line="19" Column="19" />
+      <File FileName="Assets/Game/Scripts/Rotate_Constant.cs" Line="16" Column="16" />
+      <File FileName="Assets/Game/Scripts/DataControls/DataFlocking.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/DataControls/DataController.cs" Line="44" Column="44" />
+      <File FileName="Assets/Game/Scripts/GameInit.cs" Line="2" Column="2" />
+      <File FileName="Assets/Game/Scripts/DensityWaveGalaxy/Galaxy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Game/Scripts/Universe/UniverseCube.cs" Line="2" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
